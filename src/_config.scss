@@ -1,0 +1,37 @@
+$g-background-color: #FFFFFF;
+$g-red-color: #EB0028;
+$g-gray-color: #929292;
+$g-gray-light-color: #9B9B9B;
+$g-border-color: #E9E9E9;
+$g-black-color: #000000;
+
+@function calcWidth($cols-num) {
+    @return calc($g-column-width * $cols-num + $g-columns-gap * ($cols-num - 1) + $g-app-padding-x * 2 + 20px);
+}
+
+$g-column-width: 360px;
+$g-columns-gap: 40px;
+$g-app-padding-x: 20px;
+$g-desktop-width: calcWidth(3);
+$g-tablet-width: calcWidth(2);
+$g-mobile-width: calcWidth(1);
+
+@mixin media($media) {
+    @if $media =='desktop' {
+        @media screen and (min-width: #{$g-desktop-width}) {
+            @content;
+        }
+    }
+
+    @else if $media =='tablet' {
+        @media screen and (min-width: #{$g-tablet-width}) {
+            @content;
+        }
+    }
+
+    @else if $media =='mobile' {
+        @media screen and (min-width: 0px) {
+            @content;
+        }
+    }
+}

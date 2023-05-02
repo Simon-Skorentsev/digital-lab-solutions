@@ -1,0 +1,23 @@
+.header {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__burger {
+		position: absolute;
+		top: 0.2rem;
+		left: 0;
+        max-width: 8vw;
+
+		cursor: pointer;
+	}
+
+	&__search {
+		position: absolute;
+		top: 0.2rem;
+		right: 0;
+        max-width: 8vw;
+	}
+}

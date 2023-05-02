@@ -1,0 +1,57 @@
+@import "_config";
+
+body {
+	overflow-x: hidden;
+
+	background: $g-background-color;
+
+	font-family: Roboto, sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1rem;
+}
+
+.app {
+	width: 100%;
+	min-height: 100vh;
+
+	margin: 0 auto;
+	padding: 2rem $g-app-padding-x 7.34375rem;
+
+	@include media("mobile") {
+		max-width: $g-mobile-width;
+	}
+
+	@include media('tablet') {
+		max-width: $g-tablet-width;
+	}
+
+	@include media("desktop") {
+		max-width: $g-desktop-width;
+	}
+}
+
+p {
+	color: $g-gray-color;
+
+	font-size: 0.875rem;
+
+	font-weight: 400;
+	line-height: 1.25rem;
+}
+
+a {
+	text-decoration: none;
+
+	color: inherit;
+
+	&:visited {
+		color: inherit;
+	}
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.875rem;
+}

@@ -1,0 +1,9 @@
+.logotype {
+	display: flex;
+	justify-content: center;
+
+	img {
+        width: min(181px, 55vw);
+        aspect-ratio: 6.7;
+	}
+}

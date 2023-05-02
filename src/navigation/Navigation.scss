@@ -1,0 +1,111 @@
+@import "../config";
+
+$p-y: 1.25rem;
+$line-height: 1rem;
+
+.navigation {
+	top: 0;
+
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	justify-content: center;
+
+	width: 100%;
+	margin-top: 1.75rem;
+
+	background-color: $g-background-color;
+
+	font-size: 1rem;
+	line-height: $line-height;
+	gap: 1rem;
+
+	&__item {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+
+		padding-bottom: $p-y;
+
+		cursor: default;
+		white-space: nowrap;
+		gap: 0.3125rem;
+
+		&:hover {
+			.submenu {
+				display: flex;
+			}
+		}
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+
+			width: 100%;
+
+			content: "";
+
+			border-bottom: 1px solid $g-border-color;
+		}
+	}
+
+	&__item:last-child {
+		&::after {
+			border-bottom: none;
+		}
+	}
+
+	&__start-point {
+		position: absolute;
+
+		visibility: hidden;
+
+		width: 100%;
+	}
+
+	@include media("desktop") {
+		position: sticky;
+
+		flex-direction: row;
+
+		transition: top 0.2s ease-in-out;
+		gap: 2rem;
+
+		&::before {
+			position: absolute;
+			top: 0;
+
+			width: 100vw;
+
+			content: "";
+
+			border-top: 1px solid $g-border-color;
+		}
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+
+			width: 100vw;
+
+			content: "";
+
+			border-bottom: 1px solid $g-border-color;
+		}
+
+		&--hidden {
+			top: calc($p-y * -2 - $line-height);
+		}
+
+		&__item {
+			position: relative;
+
+			padding: $p-y 0;
+
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
